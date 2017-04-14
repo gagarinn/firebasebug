@@ -1,0 +1,312 @@
+apply plugin: 'com.android.application'
+//apply plugin: 'android-apt'
+//apply plugin: 'com.uphyca.and roid-aspectj'
+def AAVersion = '4.0.0'
+def GcmVersion = '10.2.1'
+def AndroidSupportLibraryVersion = '25.0.1'
+
+buildscript {
+    repositories {
+        mavenCentral()
+        mavenLocal()
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
+    }
+}
+
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion '25.0.0'
+
+    defaultConfig {
+        applicationId "it.clipcall.qa"
+        minSdkVersion 16
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    productFlavors {
+        prod {
+            applicationId 'it.clipcall.qa'
+        }
+
+        another {
+            applicationId 'it.clipcall.another'
+
+        }
+
+    }
+    packagingOptions {
+        exclude 'LICENSE.txt'
+    }
+}
+
+repositories {
+    maven() {
+        name 'RoboBinding Framework Maven Repository'
+        url "https://github.com/RoboBinding/RoboBinding-aspectj-plugin/raw/master/mavenRepo"
+    }
+    mavenCentral()
+    maven() {
+        name 'SonaType snapshot repository'
+        url 'https://oss.sonatype.org/content/repositories/snapshots'
+    }
+    maven { url "https://jitpack.io" }
+    maven { url "https://raw.githubusercontent.com/layerhq/releases-android/master/releases/" }
+    flatDir {
+        dirs 'libs'
+    }
+}
+
+
+dependencies {
+//    configurations.all {
+//        resolutionStrategy {
+//            force "com.android.support:design:$AndroidSupportLibraryVersion"
+//            force "com.android.support:support-v4:$AndroidSupportLibraryVersion"
+//            force "com.android.support:appcompat-v7:$AndroidSupportLibraryVersion"
+//            force "org.androidannotations:androidannotations-api:$AAVersion"
+//            force "com.android.support:palette-v7:$AndroidSupportLibraryVersion"
+//            force "com.android.support:percent:$AndroidSupportLibraryVersion"
+//            force "com.android.support:recyclerview-v7:$AndroidSupportLibraryVersion"
+//            force "com.android.support:cardview-v7:$AndroidSupportLibraryVersion"
+//            force "com.android.support:support-v13:$AndroidSupportLibraryVersion"
+//        }
+//    }
+
+//    compile "com.android.support:design:$AndroidSupportLibraryVersion"
+//    compile "com.android.support:support-v4:$AndroidSupportLibraryVersion"
+//    compile "com.android.support:appcompat-v7:$AndroidSupportLibraryVersion"
+//    compile "org.androidannotations:androidannotations-api:$AAVersion"
+//    compile "com.android.support:palette-v7:$AndroidSupportLibraryVersion"
+//    compile "com.android.support:percent:$AndroidSupportLibraryVersion"
+//    compile "com.android.support:recyclerview-v7:$AndroidSupportLibraryVersion"
+//    compile "com.android.support:cardview-v7:$AndroidSupportLibraryVersion"
+//    compile "com.android.support:support-v13:$AndroidSupportLibraryVersion"
+//    compile fileTree(dir: 'libs', include: ['*.jar'])
+//    compile 'com.android.support:appcompat-v7:25.0.1'
+//
+//    compile 'com.google.firebase:firebase-messaging:10.2.1'
+//    compile 'com.firebase:firebase-jobdispatcher:0.5.2'
+//
+//    // Testing dependencies
+//    androidTestCompile 'com.android.support.test.espresso:espresso-core:2.2.2'
+//    androidTestCompile 'com.android.support.test:runner:0.5'
+//    androidTestCompile 'com.android.support:support-annotations:25.0.1'
+
+//    compile fileTree(include: ['*.jar'], dir: 'libs')
+
+//    compile files('libs/opentok-android-sdk-2.7.0.jar')
+//    compile(name: 'TildaLib', ext: 'aar')
+//    androidTestCompile "com.android.support:support-annotations:$AndroidSupportLibraryVersion"
+//    androidTestCompile ('com.android.support.test.espresso:espresso-contrib:2.0') {
+//        exclude module: 'support-annotations'
+//    }
+    // Optional -- Hamcrest library
+    // Optional -- UI testing with Espresso
+    // Optional -- UI testing with UI Automator
+    // If you want to use the GPU Filters
+//    compile('com.github.Kennyc1012:MultiStateView:1.1.1') {
+//        exclude group: 'com.android.support'
+//    }
+//    compile('com.github.afollestad:sectioned-recyclerview:0.2.1') {
+//        transitive = true
+//    }
+//    compile files('libs/ubertesters.sdk.android.jar')
+//    compile('io.intercom.android:intercom-sdk:1.+@aar') {
+//        transitive = true
+//    }
+//    apt "org.androidannotations:androidannotations:$AAVersion"
+
+
+
+//    compile ("com.google.android.gms:play-services-base:$GcmVersion"){
+////        exclude module: 'support-v4'
+//    }
+//    compile "com.google.android.gms:play-services-identity:$GcmVersion"
+//    compile "com.google.android.gms:play-services-maps:$GcmVersion"
+//    compile "com.google.android.gms:play-services-location:$GcmVersion"
+//    compile "com.google.android.gms:play-services-wallet:$GcmVersion"
+//    compile "com.google.android.gms:play-services-ads:$GcmVersion"
+//    compile "com.google.android.gms:play-services-auth:$GcmVersion"
+////    compile "com.google.android.gms:play-services-cast-framework:$GcmVersion"
+//    compile "com.google.android.gms:play-services-vision:$GcmVersion"
+//    compile "com.google.android.gms:play-services-places:$GcmVersion"
+
+//    compile "com.google.firebase:firebase-core:$GcmVersion"
+//    compile "com.google.firebase:firebase-appindexing:$GcmVersion"
+//    compile "com.google.firebase:firebase-messaging:$GcmVersion"
+//    compile('com.layer.sdk:layer-sdk:0.23.12') {
+//        exclude group: 'org.slf4j'
+//
+//    }
+
+//    compile('com.github.bright:slf4android:0.1.3') {
+//        transitive = true
+//    }
+
+    //    compile 'io.intercom.android:intercom-sdk-fcm:3.+'
+
+
+//    testCompile 'org.mockito:mockito-core:1.10.5'
+//    androidTestCompile 'junit:junit:4.12'
+    //    provided 'com.google.dagger:dagger-compiler:2.9'
+//    compile ('io.intercom.android:intercom-sdk-base:3.+'){
+////        exclude module: 'animated-vector-drawable';
+////        exclude module: 'support-vector-drawable';
+////        exclude module: 'recyclerview-v7';
+//        exclude group: "com.android.support";
+//    }
+//    compile 'com.android.support:multidex:1.0.1'
+//    compile 'com.squareup.okhttp3:okhttp:3.1.2'
+//    compile 'com.squareup.okhttp3:logging-interceptor:3.1.2'
+//    compile 'com.nineoldandroids:library:2.4.0'
+//    compile 'com.amazonaws:aws-android-sdk-core:2.3.3'
+//    compile 'com.amazonaws:aws-android-sdk-s3:2.3.3'
+//    compile 'com.squareup.retrofit2:retrofit:2.0.0'
+//    compile 'com.google.code.gson:gson:2.6.1'
+//    compile 'com.squareup.retrofit2:converter-gson:2.0.0'
+//    compile 'com.google.dagger:dagger:2.9'
+//    compile 'com.slimgears.slimrepo:slimrepo-android:0.9.0'
+//    compile 'com.github.ksoichiro:android-observablescrollview:1.6.0'
+//    compile 'com.squareup.picasso:picasso:2.5.2'
+//    compile 'com.makeramen:roundedimageview:2.2.1'
+//    compile 'com.github.medyo:fancybuttons:1.5@aar'
+//    compile 'com.venmo.view.tooltip:tooltip:0.1.2@aar'
+//    compile 'com.daimajia.swipelayout:library:1.2.0@aar'
+//    compile 'com.mikepenz:actionitembadge:3.2.0@aar'
+//    compile 'com.mikepenz:iconics-core:2.5.0@aar'
+//    compile 'com.github.elevenetc:badgeview:v1.0.0'
+//    compile 'me.zhanghai.android.materialprogressbar:library:1.1.4'
+//    compile 'com.github.dmytrodanylyk.circular-progress-button:library:1.1.3'
+//    compile 'com.daimajia.easing:library:1.0.1@aar'
+//    compile 'com.daimajia.androidanimations:library:1.1.3@aar'
+//    compile 'io.branch.sdk.android:library:1.11.1'
+//    compile 'org.mockito:mockito-core:1.10.5'
+//    compile 'com.balysv:material-ripple:1.0.2'
+//    compile 'com.esotericsoftware.kryo:kryo:2.24.0'
+//    compile 'com.github.sd6352051.niftydialogeffects:niftydialogeffects:1.0.0@aar'
+//    compile 'com.mikhaellopez:circularprogressbar:1.0.1'
+//    compile 'com.mixpanel.android:mixpanel-android:4.6.4'
+//    compile 'org.simple:androideventbus:1.0.5'
+//    compile 'tyrantgit:explosionfield:1.0.1'
+//    compile 'com.yqritc:recyclerview-flexibledivider:1.2.6'
+//    compile 'uk.co.chrisjenx:calligraphy:2.1.0'
+//    compile 'com.github.florent37:viewanimator:1.0.0@aar'
+//    compile 'me.drakeet.materialdialog:library:1.2.8'
+//    compile 'me.kentin:yeti:1.1.0'
+//    compile 'hanks.xyz:smallbang-library:0.1.2'
+//    compile 'net.the4thdimension:audio-wife:1.0.3'
+//    compile 'com.ToxicBakery.viewpager.transforms:view-pager-transforms:1.2.32@aar'
+////    compile 'org.modelmapper:modelmapper:0.7.5'
+//    compile 'io.card:android-sdk:5.3.0'
+//    compile 'com.stripe:stripe-android:1.0.4'
+//    compile 'com.basgeekball:awesome-validation:1.1'
+//    compile 'com.getbase:floatingactionbutton:1.10.1'
+//    compile 'jp.wasabeef:picasso-transformations:1.4.0'
+//    compile 'jp.co.cyberagent.android.gpuimage:gpuimage-library:1.3.0'
+//    compile 'com.github.ozodrukh:CircularReveal:1.1.0'
+//    compile 'org.parceler:parceler-api:1.0.4'
+//    compile 'com.karumi:dexter:2.2.1'
+//    compile 'com.google.maps.android:android-maps-utils:0.3.4'
+//    compile 'es.voghdev.pdfviewpager:library:0.2.0'
+//    compile 'cat.ereza:customactivityoncrash:1.5.0'
+//    compile ('com.github.pwittchen:prefser:2.0.5'){
+//        exclude module: 'support-annotations';
+//    }
+//    compile 'io.reactivex:rxandroid:1.1.0'
+//    compile 'com.appsee:appsee-android:+'
+//    compile 'joda-time:joda-time:2.9.3'
+//    compile ('com.facebook.android:facebook-android-sdk:4.11.0'){
+//        exclude module: 'support-v4';
+//        exclude module: 'support-annotations';
+//    }
+//    compile 'com.mikhaellopez:circularimageview:3.0.2'
+//    compile 'com.commit451:NativeStackBlur:1.0.2'
+//    compile ('jp.wasabeef:recyclerview-animators:2.2.3'){
+//        exclude module: 'appcompat-v7';
+//        exclude module: 'recyclerview-v7';
+//    }
+//    compile 'fr.avianey.com.viewpagerindicator:library:2.4.1.1@aar'
+////    testCompile 'org.mockito:mockito-core:1.10.5'
+////    testCompile 'junit:junit:4.12'
+////    testCompile 'org.robolectric:robolectric:3.0'
+////    androidTestCompile 'junit:junit:4.12'
+////    androidTestCompile 'com.crittercism.dexmaker:dexmaker:1.4'
+////    androidTestCompile 'com.crittercism.dexmaker:dexmaker-mockito:1.4'
+////    androidTestCompile 'com.crittercism.dexmaker:dexmaker-dx:1.4'
+////    androidTestCompile 'com.android.support.test:runner:0.5'
+////    androidTestCompile 'com.android.support.test:rules:0.5'
+////    androidTestCompile 'org.hamcrest:hamcrest-library:1.3'
+////    androidTestCompile 'com.android.support.test.espresso:espresso-core:2.2.2'
+////    androidTestCompile 'com.android.support.test.uiautomator:uiautomator-v18:2.1.2'
+//    apt 'org.parceler:parceler:1.0.4'
+//    apt 'com.google.dagger:dagger-compiler:2.9'
+//    apt 'com.slimgears.slimrepo:slimrepo-apt:0.9.0'
+//    provided 'org.glassfish:javax.annotation:10.0-b28'
+
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.android.support:appcompat-v7:25.0.1'
+
+    compile 'com.google.firebase:firebase-messaging:10.2.1'
+    compile 'com.firebase:firebase-jobdispatcher:0.5.2'
+
+}
+
+apply plugin: 'com.google.gms.google-services'
+
+//apply plugin: 'com.android.application'
+//
+//android {
+//    compileSdkVersion 25
+//    buildToolsVersion '25.0.0'
+//
+//    defaultConfig {
+//        applicationId "it.clipcall.qa"
+//        minSdkVersion 14
+//        targetSdkVersion 25
+//        versionCode 1
+//        versionName "1.0"
+//
+//        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+//    }
+//
+//    buildTypes {
+//        release {
+//            minifyEnabled true
+//            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+//        }
+//    }
+//
+//    packagingOptions {
+//        exclude 'LICENSE.txt'
+//    }
+//}
+//
+//dependencies {
+//    compile fileTree(dir: 'libs', include: ['*.jar'])
+//    compile 'com.android.support:appcompat-v7:25.0.1'
+//
+//    compile 'com.google.firebase:firebase-messaging:10.2.1'
+//    compile 'com.firebase:firebase-jobdispatcher:0.5.2'
+//
+//    // Testing dependencies
+//    androidTestCompile 'com.android.support.test.espresso:espresso-core:2.2.2'
+//    androidTestCompile 'com.android.support.test:runner:0.5'
+//    androidTestCompile 'com.android.support:support-annotations:25.0.1'
+//}
+//
+//apply plugin: 'com.google.gms.google-services'
