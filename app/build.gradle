@@ -3,7 +3,7 @@ apply plugin: 'com.android.application'
 //apply plugin: 'com.uphyca.and roid-aspectj'
 def AAVersion = '4.0.0'
 def GcmVersion = '10.2.1'
-def AndroidSupportLibraryVersion = '25.0.1'
+def AndroidSupportLibraryVersion = '25.2.0'
 
 buildscript {
     repositories {
@@ -87,27 +87,18 @@ dependencies {
 //        }
 //    }
 
-//    compile "com.android.support:design:$AndroidSupportLibraryVersion"
-//    compile "com.android.support:support-v4:$AndroidSupportLibraryVersion"
-//    compile "com.android.support:appcompat-v7:$AndroidSupportLibraryVersion"
-//    compile "org.androidannotations:androidannotations-api:$AAVersion"
-//    compile "com.android.support:palette-v7:$AndroidSupportLibraryVersion"
-//    compile "com.android.support:percent:$AndroidSupportLibraryVersion"
-//    compile "com.android.support:recyclerview-v7:$AndroidSupportLibraryVersion"
-//    compile "com.android.support:cardview-v7:$AndroidSupportLibraryVersion"
-//    compile "com.android.support:support-v13:$AndroidSupportLibraryVersion"
-//    compile fileTree(dir: 'libs', include: ['*.jar'])
-//    compile 'com.android.support:appcompat-v7:25.0.1'
-//
-//    compile 'com.google.firebase:firebase-messaging:10.2.1'
-//    compile 'com.firebase:firebase-jobdispatcher:0.5.2'
-//
-//    // Testing dependencies
-//    androidTestCompile 'com.android.support.test.espresso:espresso-core:2.2.2'
-//    androidTestCompile 'com.android.support.test:runner:0.5'
-//    androidTestCompile 'com.android.support:support-annotations:25.0.1'
+    compile "com.android.support:design:$AndroidSupportLibraryVersion"
+    compile "com.android.support:support-v4:$AndroidSupportLibraryVersion"
+    compile "com.android.support:appcompat-v7:$AndroidSupportLibraryVersion"
+    compile "org.androidannotations:androidannotations-api:$AAVersion"
+    compile "com.android.support:palette-v7:$AndroidSupportLibraryVersion"
+    compile "com.android.support:percent:$AndroidSupportLibraryVersion"
+    compile "com.android.support:recyclerview-v7:$AndroidSupportLibraryVersion"
+    compile "com.android.support:cardview-v7:$AndroidSupportLibraryVersion"
+    compile "com.android.support:support-v13:$AndroidSupportLibraryVersion"
 
-//    compile fileTree(include: ['*.jar'], dir: 'libs')
+
+    compile fileTree(include: ['*.jar'], dir: 'libs')
 
 //    compile files('libs/opentok-android-sdk-2.7.0.jar')
 //    compile(name: 'TildaLib', ext: 'aar')
@@ -133,22 +124,22 @@ dependencies {
 
 
 
-//    compile ("com.google.android.gms:play-services-base:$GcmVersion"){
-////        exclude module: 'support-v4'
-//    }
-//    compile "com.google.android.gms:play-services-identity:$GcmVersion"
-//    compile "com.google.android.gms:play-services-maps:$GcmVersion"
-//    compile "com.google.android.gms:play-services-location:$GcmVersion"
-//    compile "com.google.android.gms:play-services-wallet:$GcmVersion"
-//    compile "com.google.android.gms:play-services-ads:$GcmVersion"
-//    compile "com.google.android.gms:play-services-auth:$GcmVersion"
-////    compile "com.google.android.gms:play-services-cast-framework:$GcmVersion"
-//    compile "com.google.android.gms:play-services-vision:$GcmVersion"
-//    compile "com.google.android.gms:play-services-places:$GcmVersion"
+    compile ("com.google.android.gms:play-services-base:$GcmVersion"){
+//        exclude module: 'support-v4'
+    }
+    compile "com.google.android.gms:play-services-identity:$GcmVersion"
+    compile "com.google.android.gms:play-services-maps:$GcmVersion"
+    compile "com.google.android.gms:play-services-location:$GcmVersion"
+    compile "com.google.android.gms:play-services-wallet:$GcmVersion"
+    compile "com.google.android.gms:play-services-ads:$GcmVersion"
+    compile "com.google.android.gms:play-services-auth:$GcmVersion"
+    compile "com.google.android.gms:play-services-cast-framework:$GcmVersion"
+    compile "com.google.android.gms:play-services-vision:$GcmVersion"
+    compile "com.google.android.gms:play-services-places:$GcmVersion"
 
-//    compile "com.google.firebase:firebase-core:$GcmVersion"
-//    compile "com.google.firebase:firebase-appindexing:$GcmVersion"
-//    compile "com.google.firebase:firebase-messaging:$GcmVersion"
+    compile "com.google.firebase:firebase-core:$GcmVersion"
+    compile "com.google.firebase:firebase-appindexing:$GcmVersion"
+    compile "com.google.firebase:firebase-messaging:$GcmVersion"
 //    compile('com.layer.sdk:layer-sdk:0.23.12') {
 //        exclude group: 'org.slf4j'
 //
@@ -258,16 +249,12 @@ dependencies {
 //    apt 'com.slimgears.slimrepo:slimrepo-apt:0.9.0'
 //    provided 'org.glassfish:javax.annotation:10.0-b28'
 
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.android.support:appcompat-v7:25.0.1'
 
-    compile 'com.google.firebase:firebase-messaging:10.2.1'
-    compile 'com.firebase:firebase-jobdispatcher:0.5.2'
 
 }
 
 apply plugin: 'com.google.gms.google-services'
-
+//gradle -q app:dependencies --configuration compile
 //apply plugin: 'com.android.application'
 //
 //android {
