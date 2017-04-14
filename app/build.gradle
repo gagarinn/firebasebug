@@ -87,10 +87,11 @@ dependencies {
 //        }
 //    }
 
+    compile "org.androidannotations:androidannotations-api:$AAVersion"
+
     compile "com.android.support:design:$AndroidSupportLibraryVersion"
     compile "com.android.support:support-v4:$AndroidSupportLibraryVersion"
     compile "com.android.support:appcompat-v7:$AndroidSupportLibraryVersion"
-    compile "org.androidannotations:androidannotations-api:$AAVersion"
     compile "com.android.support:palette-v7:$AndroidSupportLibraryVersion"
     compile "com.android.support:percent:$AndroidSupportLibraryVersion"
     compile "com.android.support:recyclerview-v7:$AndroidSupportLibraryVersion"
@@ -125,7 +126,7 @@ dependencies {
 
 
     compile ("com.google.android.gms:play-services-base:$GcmVersion"){
-//        exclude module: 'support-v4'
+        exclude module: 'support-v4'
     }
     compile "com.google.android.gms:play-services-identity:$GcmVersion"
     compile "com.google.android.gms:play-services-maps:$GcmVersion"
@@ -133,7 +134,9 @@ dependencies {
     compile "com.google.android.gms:play-services-wallet:$GcmVersion"
     compile "com.google.android.gms:play-services-ads:$GcmVersion"
     compile "com.google.android.gms:play-services-auth:$GcmVersion"
-    compile "com.google.android.gms:play-services-cast-framework:$GcmVersion"
+    compile ("com.google.android.gms:play-services-cast-framework:$GcmVersion"){
+        exclude group: 'com.android.support'
+    }
     compile "com.google.android.gms:play-services-vision:$GcmVersion"
     compile "com.google.android.gms:play-services-places:$GcmVersion"
 
